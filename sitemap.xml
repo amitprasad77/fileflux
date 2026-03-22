@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://YOUR-DOMAIN.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/tools/merge-pdf.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/tools/split-pdf.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/tools/compress-pdf.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/tools/rotate-pdf.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/tools/jpg-to-pdf.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/tools/compress-image.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/tools/resize-image.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/tools/convert-image.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/premium.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- PDF Tools -->
+  <url><loc>https://fileflux-tool.netlify.app/tools/merge-pdf.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/split-pdf.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/compress-pdf.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/rotate-pdf.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/jpg-to-pdf.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/pdf-to-jpg.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/protect-pdf.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/esign-pdf.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- Image Tools -->
+  <url><loc>https://fileflux-tool.netlify.app/tools/compress-image.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/resize-image.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/convert-image.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/crop-image.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/watermark-image.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Converters -->
+  <url><loc>https://fileflux-tool.netlify.app/tools/word-to-pdf.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/tools/html-to-pdf.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Legal -->
+  <url><loc>https://fileflux-tool.netlify.app/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fileflux-tool.netlify.app/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

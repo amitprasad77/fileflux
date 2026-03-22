@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /LAUNCH-GUIDE.html
 
-Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
+Sitemap: https://fileflux-tool.netlify.app/sitemap.xml
