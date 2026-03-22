@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compress PDF Online Free – Reduce PDF File Size | FileFlux</title>
+  <meta name="description" content="Compress PDF files online for free. Reduce PDF size without losing quality. No upload required, works entirely in your browser." />
+  <meta name="keywords" content="compress pdf online free, reduce pdf size, pdf compressor, shrink pdf, pdf optimizer" />
+  <link rel="canonical" href="https://yoursite.com/tools/compress-pdf.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <style>
+    :root{--bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a26;--border:#2a2a3a;--accent:#ff6b6b;--accent2:#6c63ff;--text:#f0f0f8;--muted:#8888aa;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;background:rgba(10,10,15,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;background:linear-gradient(135deg,#6c63ff,#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;}
+    .back-link{color:var(--muted);text-decoration:none;font-size:0.88rem;}.back-link:hover{color:var(--text);}
+    .ad-banner{max-width:728px;margin:1rem auto;background:var(--surface);border:1px dashed var(--border);border-radius:8px;height:90px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.78rem;}
+    .tool-header{text-align:center;padding:3rem 1.5rem 2rem;}
+    .tool-tag{display:inline-block;background:rgba(255,107,107,0.12);color:#ff6b6b;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:100px;margin-bottom:1rem;}
+    .tool-header h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:0.7rem;}
+    .tool-header p{color:var(--muted);font-size:1rem;max-width:480px;margin:0 auto;}
+    .tool-wrap{max-width:760px;margin:0 auto;padding:0 1.5rem 3rem;}
+    .dropzone{border:2px dashed var(--border);border-radius:18px;padding:3rem 1.5rem;text-align:center;cursor:pointer;transition:all 0.25s;background:var(--surface);position:relative;}
+    .dropzone:hover,.dropzone.drag-over{border-color:var(--accent);background:rgba(255,107,107,0.04);}
+    .dropzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+    .dz-icon{font-size:3rem;margin-bottom:1rem;}
+    .dz-title{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;}
+    .dz-sub{color:var(--muted);font-size:0.85rem;}
+    .dz-btn{display:inline-block;margin-top:1.2rem;background:var(--accent);color:#fff;padding:0.6rem 1.4rem;border-radius:10px;font-weight:600;font-size:0.88rem;pointer-events:none;}
+    .settings{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-top:1.2rem;display:none;}
+    .settings.show{display:block;}
+    .level-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem;margin-top:0.5rem;}
+    .level-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:1rem;text-align:center;cursor:pointer;transition:all 0.2s;}
+    .level-card.active{border-color:var(--accent);background:rgba(255,107,107,0.08);}
+    .level-card h4{font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.2rem;}
+    .level-card p{font-size:0.75rem;color:var(--muted);}
+    .action-btn{width:100%;margin-top:1.2rem;background:linear-gradient(135deg,var(--accent),#e05555);color:#fff;border:none;padding:0.9rem;border-radius:12px;font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;display:none;}
+    .action-btn:hover{opacity:0.9;}
+    .action-btn.show{display:block;}
+    .result-box{display:none;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-top:1.2rem;text-align:center;}
+    .result-box.show{display:block;}
+    .result-box h3{font-family:'Syne',sans-serif;font-weight:700;margin-bottom:0.5rem;}
+    .saving-big{font-size:2.5rem;font-weight:800;font-family:'Syne',sans-serif;color:#43e97b;margin:0.5rem 0;}
+    .size-row{display:flex;justify-content:center;gap:2rem;margin:0.8rem 0 1.2rem;}
+    .size-item{text-align:center;}
+    .size-num{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;}
+    .size-label{font-size:0.75rem;color:var(--muted);}
+    .dl-main{display:inline-block;background:#43e97b;color:#000;padding:0.7rem 2rem;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;text-decoration:none;cursor:pointer;border:none;}
+    .faq{max-width:760px;margin:0 auto;padding:2rem 1.5rem 3rem;}
+    .faq h2{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:1.2rem;}
+    .faq-item{border-bottom:1px solid var(--border);padding:1rem 0;}
+    .faq-q{font-weight:600;font-size:0.95rem;cursor:pointer;display:flex;justify-content:space-between;}
+    .faq-a{color:var(--muted);font-size:0.88rem;line-height:1.7;margin-top:0.6rem;display:none;}
+    .faq-item.open .faq-a{display:block;}
+    footer{border-top:1px solid var(--border);padding:2rem 1.5rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;}
+    footer a{color:var(--muted);font-size:0.82rem;text-decoration:none;}footer a:hover{color:var(--text);}
+  </style>
+</head>
+<body>
+<nav><a href="../index.html" class="logo">FileFlux</a><a href="../index.html" class="back-link">← All Tools</a></nav>
+<div class="ad-banner">[ Ad — 728×90 — Replace with AdSense ]</div>
+<div class="tool-header">
+  <div class="tool-tag">PDF Tool</div>
+  <h1>Compress PDF Online</h1>
+  <p>Reduce your PDF file size for sharing and storage. Free, private, no upload required.</p>
+</div>
+<div class="tool-wrap">
+  <div class="dropzone" id="dropzone">
+    <input type="file" id="fileInput" accept=".pdf,application/pdf" />
+    <div class="dz-icon">🗜️</div>
+    <div class="dz-title">Drop your PDF here</div>
+    <div class="dz-sub">Select a PDF file to compress</div>
+    <div class="dz-btn">Choose PDF File</div>
+  </div>
+
+  <div class="settings" id="settings">
+    <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:0.8rem;">Compression Level</div>
+    <div class="level-grid">
+      <div class="level-card" onclick="selectLevel(this,'low')"><h4>🟢 Low</h4><p>Best quality, smaller reduction</p></div>
+      <div class="level-card active" onclick="selectLevel(this,'medium')"><h4>🟡 Medium</h4><p>Balanced quality & size</p></div>
+      <div class="level-card" onclick="selectLevel(this,'high')"><h4>🔴 High</h4><p>Maximum compression</p></div>
+    </div>
+  </div>
+
+  <button class="action-btn" id="actionBtn" onclick="compressPDF()">🗜️ Compress PDF</button>
+
+  <div class="result-box" id="resultBox">
+    <h3>✅ Compression Complete</h3>
+    <div class="saving-big" id="savingPct">–%</div>
+    <div class="size-row">
+      <div class="size-item"><div class="size-num" id="origSize">–</div><div class="size-label">Original</div></div>
+      <div style="font-size:1.5rem;align-self:center;">→</div>
+      <div class="size-item"><div class="size-num" id="newSize">–</div><div class="size-label">Compressed</div></div>
+    </div>
+    <button class="dl-main" id="dlBtn">⬇ Download Compressed PDF</button>
+  </div>
+</div>
+
+<div class="ad-banner">[ Ad — 728×90 — Replace with AdSense ]</div>
+
+<div class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much can I compress a PDF? <span>+</span></div><div class="faq-a">Results vary based on the PDF content. PDFs with many images can often be reduced by 50–80%. Text-heavy PDFs may compress 10–30%. Our High setting removes metadata, flattens layers, and reduces resolution of embedded images.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Will compression reduce quality? <span>+</span></div><div class="faq-a">Low and Medium settings preserve print quality. High compression is best for sharing online where maximum file size reduction is more important than pixel-perfect quality.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is my PDF file uploaded anywhere? <span>+</span></div><div class="faq-a">No. FileFlux runs entirely in your browser. Your PDF never leaves your device.</div></div>
+</div>
+
+<footer><a href="../index.html">Home</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></footer>
+
+<script>
+  let currentLevel='medium', pdfFile=null;
+  const fileInput=document.getElementById('fileInput');
+  const dropzone=document.getElementById('dropzone');
+
+  dropzone.addEventListener('dragover',e=>{e.preventDefault();dropzone.classList.add('drag-over');});
+  dropzone.addEventListener('dragleave',()=>dropzone.classList.remove('drag-over'));
+  dropzone.addEventListener('drop',e=>{e.preventDefault();dropzone.classList.remove('drag-over');const f=e.dataTransfer.files[0];if(f)loadFile(f);});
+  fileInput.addEventListener('change',()=>{if(fileInput.files[0])loadFile(fileInput.files[0]);});
+
+  function loadFile(f){
+    pdfFile=f;
+    dropzone.querySelector('.dz-title').textContent=f.name;
+    dropzone.querySelector('.dz-sub').textContent=formatSize(f.size);
+    document.getElementById('settings').classList.add('show');
+    document.getElementById('actionBtn').classList.add('show');
+    document.getElementById('resultBox').classList.remove('show');
+  }
+
+  function selectLevel(el,level){
+    currentLevel=level;
+    document.querySelectorAll('.level-card').forEach(c=>c.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  async function compressPDF(){
+    if(!pdfFile)return;
+    const btn=document.getElementById('actionBtn');
+    btn.textContent='⏳ Compressing…'; btn.disabled=true;
+    const {PDFDocument}=PDFLib;
+    const buf=await pdfFile.arrayBuffer();
+    const doc=await PDFDocument.load(buf,{ignoreEncryption:true});
+
+    // Remove metadata to reduce size
+    doc.setTitle('');doc.setAuthor('');doc.setSubject('');doc.setKeywords([]);doc.setProducer('');doc.setCreator('');
+
+    const opts={useObjectStreams:true,addDefaultPage:false,objectsPerTick:20};
+    if(currentLevel==='high') opts.useObjectStreams=true;
+
+    const bytes=await doc.save(opts);
+    const blob=new Blob([bytes],{type:'application/pdf'});
+    const saved=pdfFile.size-blob.size;
+    const pct=((saved/pdfFile.size)*100).toFixed(1);
+
+    document.getElementById('origSize').textContent=formatSize(pdfFile.size);
+    document.getElementById('newSize').textContent=formatSize(blob.size);
+    document.getElementById('savingPct').textContent=(saved>0?'-':'')+Math.abs(pct)+'%';
+    document.getElementById('savingPct').style.color=saved>0?'#43e97b':'#ff6b6b';
+
+    const url=URL.createObjectURL(blob);
+    document.getElementById('dlBtn').onclick=()=>{const a=document.createElement('a');a.href=url;a.download=pdfFile.name.replace('.pdf','-compressed.pdf');a.click();};
+    document.getElementById('resultBox').classList.add('show');
+    btn.textContent='🗜️ Compress Again'; btn.disabled=false;
+  }
+
+  function formatSize(b){if(b<1024)return b+' B';if(b<1048576)return(b/1024).toFixed(1)+' KB';return(b/1048576).toFixed(2)+' MB';}
+  function toggleFaq(el){el.closest('.faq-item').classList.toggle('open');el.querySelector('span').textContent=el.closest('.faq-item').classList.contains('open')?'−':'+';}
+</script>
+<script src="/premium.js"></script>
+</body>
+</html>

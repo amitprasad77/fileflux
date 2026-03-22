@@ -1,0 +1,30 @@
+# Environment variables - never commit real secrets
+.env
+.env.local
+.env.production
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node (if you ever add it)
+node_modules/
+
+# Private guides - don't expose these
+PREMIUM-SETUP.html
+
+# Netlify
+.netlify/

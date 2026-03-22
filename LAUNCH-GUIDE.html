@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FileFlux – Launch Guide: SEO, Monetization & Deployment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0a0a0f;--surface:#12121a;--border:#2a2a3a;--accent:#6c63ff;--accent2:#ff6b6b;--accent3:#43e97b;--text:#f0f0f8;--muted:#8888aa; }
+    * { margin:0;padding:0;box-sizing:border-box; }
+    body { font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:2rem; }
+    .wrap { max-width:860px;margin:0 auto; }
+    h1 { font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;margin-bottom:0.5rem;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent; }
+    .subtitle { color:var(--muted);margin-bottom:3rem;font-size:1.05rem; }
+    h2 { font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin:2.5rem 0 1rem;
+      padding-left:1rem;border-left:3px solid var(--accent); }
+    h3 { font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin:1.2rem 0 0.5rem;color:var(--accent3); }
+    p { color:var(--muted);margin-bottom:0.8rem;font-size:0.93rem; }
+    code { background:var(--surface);border:1px solid var(--border);padding:0.2rem 0.5rem;border-radius:5px;font-size:0.85rem;color:#a09bff; }
+    pre { background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem;overflow-x:auto;margin:1rem 0; }
+    pre code { background:none;border:none;padding:0;font-size:0.83rem;color:#d4d4ff; }
+    .card { background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.4rem;margin-bottom:1rem; }
+    .card h3 { margin-top:0; }
+    .badge { display:inline-block;padding:0.2rem 0.6rem;border-radius:6px;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-right:0.4rem; }
+    .b-free { background:rgba(67,233,123,0.12);color:#43e97b; }
+    .b-paid { background:rgba(255,107,107,0.12);color:#ff6b6b; }
+    .b-imp { background:rgba(108,99,255,0.15);color:#a09bff; }
+    table { width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.88rem; }
+    th { background:var(--surface);padding:0.7rem 1rem;text-align:left;font-family:'Syne',sans-serif;font-weight:700;border-bottom:2px solid var(--border); }
+    td { padding:0.65rem 1rem;border-bottom:1px solid var(--border);color:var(--muted); }
+    td:first-child { color:var(--text);font-weight:500; }
+    ol,ul { padding-left:1.5rem;color:var(--muted);font-size:0.93rem; }
+    li { margin-bottom:0.5rem; }
+    li strong { color:var(--text); }
+    a { color:var(--accent);text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .step { display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.2rem; }
+    .step-num { background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:0.85rem;flex-shrink:0; }
+    .step-body h3 { margin-top:0; }
+    hr { border:none;border-top:1px solid var(--border);margin:2rem 0; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>🚀 FileFlux Launch Guide</h1>
+  <p class="subtitle">Complete guide: Deploy, SEO, Monetization — earn your first $100/month and beyond.</p>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>📁 Project File Structure</h2>
+  <pre><code>fileflux/
+├── index.html              ← Homepage (done ✓)
+├── tools/
+│   ├── merge-pdf.html      ← Done ✓
+│   ├── compress-image.html ← Done ✓
+│   ├── split-pdf.html      ← Build next
+│   ├── compress-pdf.html
+│   ├── pdf-to-jpg.html
+│   ├── jpg-to-pdf.html
+│   ├── rotate-pdf.html
+│   ├── resize-image.html
+│   ├── convert-image.html
+│   └── ...more tools
+├── premium.html            ← Upsell page
+├── privacy.html            ← Required for AdSense
+├── terms.html
+├── about.html
+├── sitemap.xml             ← For Google indexing
+└── robots.txt              ← For Google crawling</code></pre>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>🌐 Step 1 — Deploy for Free</h2>
+  <p>Use <strong>Cloudflare Pages</strong> (fastest CDN, free tier) or Netlify.</p>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h3>Push to GitHub</h3>
+      <p>Create a free GitHub account → New repository → Upload all files.</p>
+      <pre><code>git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/yourname/fileflux.git
+git push -u origin main</code></pre>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h3>Deploy on Cloudflare Pages</h3>
+      <p>Go to <a href="https://pages.cloudflare.com" target="_blank">pages.cloudflare.com</a> → Connect GitHub → Select repo → Deploy. Done! You get a free URL like <code>fileflux.pages.dev</code>.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h3>Add Custom Domain (optional but recommended)</h3>
+      <p>Buy a domain from Namecheap (~$10/yr) — try something like <code>fileflux.io</code>, <code>pdffast.app</code>, or <code>toolpdf.com</code>. Connect it in Cloudflare Pages for free HTTPS.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>🔍 Step 2 — SEO Strategy</h2>
+  <p>SEO is how you get free traffic from Google — which turns into ad revenue. Each tool page should target one keyword.</p>
+
+  <h3>Target Keywords Per Tool Page</h3>
+  <table>
+    <tr><th>Page</th><th>Target Keyword</th><th>Monthly Searches</th></tr>
+    <tr><td>compress-image.html</td><td>compress image online free</td><td>~200k/mo</td></tr>
+    <tr><td>merge-pdf.html</td><td>merge pdf online free</td><td>~500k/mo</td></tr>
+    <tr><td>compress-pdf.html</td><td>compress pdf online free</td><td>~300k/mo</td></tr>
+    <tr><td>resize-image.html</td><td>resize image online free</td><td>~150k/mo</td></tr>
+    <tr><td>pdf-to-jpg.html</td><td>pdf to jpg online free</td><td>~250k/mo</td></tr>
+    <tr><td>jpg-to-pdf.html</td><td>jpg to pdf online free</td><td>~180k/mo</td></tr>
+    <tr><td>convert-image.html</td><td>convert image format online</td><td>~100k/mo</td></tr>
+  </table>
+
+  <h3>On-Page SEO Checklist (already done in built pages)</h3>
+  <ul>
+    <li><strong>&lt;title&gt;</strong> contains keyword + brand</li>
+    <li><strong>&lt;meta description&gt;</strong> is compelling (affects click rate)</li>
+    <li><strong>&lt;h1&gt;</strong> contains main keyword</li>
+    <li><strong>FAQ section</strong> on every tool page (captures "People Also Ask")</li>
+    <li><strong>Schema.org JSON-LD</strong> markup included</li>
+    <li><strong>Canonical URL</strong> set on every page</li>
+    <li><strong>Internal links</strong> between tools</li>
+  </ul>
+
+  <h3>Submit to Google</h3>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body"><h3>Create sitemap.xml</h3>
+    <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;&lt;loc&gt;https://yoursite.com/&lt;/loc&gt;&lt;priority&gt;1.0&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://yoursite.com/tools/merge-pdf.html&lt;/loc&gt;&lt;priority&gt;0.9&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://yoursite.com/tools/compress-image.html&lt;/loc&gt;&lt;priority&gt;0.9&lt;/priority&gt;&lt;/url&gt;
+  &lt;!-- add all tool pages --&gt;
+&lt;/urlset&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h3>Submit to Google Search Console</h3>
+      <p>Go to <a href="https://search.google.com/search-console" target="_blank">search.google.com/search-console</a> → Add property → Verify with HTML tag → Submit Sitemap → enter <code>https://yoursite.com/sitemap.xml</code></p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h3>Create robots.txt</h3>
+      <pre><code>User-agent: *
+Allow: /
+Sitemap: https://yoursite.com/sitemap.xml</code></pre>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>💰 Step 3 — Monetization</h2>
+
+  <div class="card">
+    <h3>🥇 Google AdSense (Primary Income)</h3>
+    <p><span class="badge b-imp">Most Important</span> Apply at <a href="https://adsense.google.com" target="_blank">adsense.google.com</a>. Requirements: your site must have real content, a Privacy Policy page, and some traffic. They review in 1–2 weeks.</p>
+    <p>Once approved, replace the ad placeholder comments in each HTML file with:</p>
+    <pre><code>&lt;!-- Replace the .ad-banner div with: --&gt;
+&lt;ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+     data-ad-slot="XXXXXXXXXX"
+     data-ad-format="auto"
+     data-full-width-responsive="true"&gt;
+&lt;/ins&gt;
+&lt;script&gt;(adsbygoogle = window.adsbygoogle || []).push({});&lt;/script&gt;</code></pre>
+    <p><strong>Best ad placements for tool sites:</strong> header banner (728×90), after tool output (300×250), sidebar (160×600).</p>
+  </div>
+
+  <div class="card">
+    <h3>🥈 Premium Plan (Recurring Income)</h3>
+    <p>Create a <code>premium.html</code> upsell page. Offer via <strong>Lemon Squeezy</strong> (no code needed, handles payments + VAT).</p>
+    <p>Suggested Premium features: no ads, unlimited file size, batch processing, priority processing, API access.</p>
+    <p>Pricing: <strong>$5/month</strong> or <strong>$39/year</strong> — very compelling vs competitors at $9+/mo.</p>
+  </div>
+
+  <div class="card">
+    <h3>🥉 Affiliate Links</h3>
+    <p>Add a small "Need more?" section on each tool page with affiliate links to paid tools:</p>
+    <ul>
+      <li><strong>Adobe Acrobat</strong> – high commission, $5–15/sale</li>
+      <li><strong>Smallpdf Pro</strong> – affiliate program available</li>
+      <li><strong>Cloudconvert</strong> – affiliate program</li>
+      <li><strong>Amazon Kindle/Books</strong> – when user converts to PDF (Amazon Associates)</li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>📣 Step 4 — Get First Traffic</h2>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h3>Reddit (Free, Quick)</h3>
+      <p>Post in: <code>r/webdev</code>, <code>r/SideProject</code>, <code>r/InternetIsBeautiful</code>, <code>r/productivity</code>. Be genuine — explain what you built and why it's better (private, no signup).</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h3>Product Hunt</h3>
+      <p>Launch on <a href="https://producthunt.com" target="_blank">producthunt.com</a>. Can bring 1000–5000 visitors on launch day. Prepare a good description and screenshots.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h3>IndieHackers</h3>
+      <p>Post your story on <a href="https://indiehackers.com" target="_blank">indiehackers.com</a>. The community loves tool sites and will give feedback + upvotes.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h3>SEO (Long-term — most important)</h3>
+      <p>Google takes 3–6 months to rank new sites. Be patient — keep adding tools, add FAQs, get backlinks. A single #1 ranking for "merge pdf online free" could bring 10,000 visitors/day.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>📅 Realistic Income Timeline</h2>
+  <table>
+    <tr><th>Timeframe</th><th>Traffic</th><th>Est. Monthly Revenue</th></tr>
+    <tr><td>Month 1–2</td><td>0–500 visits/day</td><td>$0–$10 (early AdSense)</td></tr>
+    <tr><td>Month 3–4</td><td>500–2k visits/day</td><td>$30–$150</td></tr>
+    <tr><td>Month 6</td><td>2k–5k visits/day</td><td>$150–$500</td></tr>
+    <tr><td>Month 12</td><td>5k–20k visits/day</td><td>$500–$2,000+</td></tr>
+    <tr><td>Year 2+</td><td>20k+ visits/day</td><td>$2,000–$10,000+</td></tr>
+  </table>
+  <p>Tool sites typically earn <strong>$0.50–$3 RPM</strong> (per 1000 page views) from AdSense. Premium subscriptions can add 2–5× revenue on top.</p>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>🔧 Next Tools to Build</h2>
+  <p>Build these next (in priority order by search volume):</p>
+  <ol>
+    <li><strong>Split PDF</strong> – use pdf-lib (same library as merge)</li>
+    <li><strong>Compress PDF</strong> – use pdf-lib to remove metadata + downsample</li>
+    <li><strong>Resize Image</strong> – canvas API (same as compress image, simpler)</li>
+    <li><strong>Convert Image</strong> – canvas API with format selection</li>
+    <li><strong>PDF to JPG</strong> – use PDF.js to render pages to canvas</li>
+    <li><strong>JPG to PDF</strong> – use pdf-lib to embed images</li>
+    <li><strong>HTML to PDF</strong> – use jsPDF library</li>
+  </ol>
+
+  <hr />
+  <p style="color:var(--muted);font-size:0.85rem;text-align:center;">FileFlux Launch Guide — Built with ❤️ by Claude</p>
+
+</div>
+</body>
+</html>
